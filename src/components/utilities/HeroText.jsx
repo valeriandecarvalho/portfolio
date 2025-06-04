@@ -1,27 +1,51 @@
 import { FlipWords } from "./FlipWords.jsx";
 import { motion } from "motion/react";
 import { wavinghand } from "../../assets";
-const words = ["Stages","Contacts","Postes","Missions","Projets"]
+
 const HeroText = () => {
+  const words = ["Stages","Contacts","Postes","Missions","Projets"];
+  const variants = {
+    hidden: {opacity: 0, x:-50},
+    visible: {opacity: 1, x:0}
+  };
   return (
       <div className="z-10 mt-20 text-center md:mt-40 md:text-left rounded-3xl bg-clip-text">
           {/* Desktop */}
           <div className="flex-col hidden md:flex c-space space-y-2">
               <motion.h1
                   className="text-3xl font-medium"
-                  initial={{opacity:0, x:-50}}
-                  animate={{opacity:1, x:0}}
+                  variants={variants}
+                  initial="hidden"
+                  animate="visible"
                   transition={{delay: 1}}
               >
                   <img src={wavinghand} alt="main qui salue" className="inline w-8 h-8 =" /> , je suis Valérian De Carvalho
               </motion.h1>
-              <p className="text-5xl font-medium" >
-                  <span className="text-neutral-300">
+              <div className="flex flex-col items-start">
+                  <motion.p className="text-5xl font-medium text-neutral-300"
+                            variants={variants}
+                            initial="hidden"
+                            animate="visible"
+                            transition={{delay: 1.2}}
+                  >
                       Étudiant En Informatique<br/>
+                  </motion.p>
+                  <motion.p className="text-5xl font-medium text-neutral-300"
+                            variants={variants}
+                            initial="hidden"
+                            animate="visible"
+                            transition={{delay: 1.5}}
+                  >
                       Je Recherche Des<br/>
-                  </span>
-                  <FlipWords words={words} className="text-8xl font-medium"/>
-              </p>
+                  </motion.p>
+                  <motion.div
+                      variants={variants}
+                      initial="hidden"
+                      animate="visible"
+                      transition={{delay: 1.8}}>
+                  <FlipWords words={words} className="text-8xl font-medium -mt-2" />
+                  </motion.div>
+              </div>
           </div>
 
           {/* Mobile */}
@@ -29,8 +53,9 @@ const HeroText = () => {
               <motion.img src={wavinghand}
                           alt="main qui salue"
                           className="inline w-8 h-8"
-                          initial={{opacity:0, x:-50}}
-                          animate={{opacity:1, x:0}}
+                          variants={variants}
+                          initial="hidden"
+                          animate="visible"
                           transition={{delay: 1}}
               />
               <p className="font-medium">
@@ -40,6 +65,8 @@ const HeroText = () => {
                   <span className="text-5xl">
                       Étudiant<br/>
                   </span>
+              </p>
+              <p className="font-medium -mt-6">
                   <span className="text-2xl text-neutral-300">
                       en&nbsp;
                   </span>
@@ -48,7 +75,9 @@ const HeroText = () => {
                   </span>
               </p>
               <p className="font-medium">
-                  <span className="text-4xl text-neutral-300">Je recherche des<br/></span>
+                  <span className="text-4xl text-neutral-300">
+                      Je recherche des<br/>
+                  </span>
                   <FlipWords words={words} className="text-7xl font-medium"/>
               </p>
           </div>
