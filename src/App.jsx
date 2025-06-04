@@ -1,11 +1,10 @@
-import Navbar from "./components/Navbar";
-import menuIcon from "./assets/menu.svg";
-
+import {Navbar, Hero} from "./components";
 
 const App = ()  => {
   return(
     <div className="container mx-auto max-w-7xl">
       < Navbar />
+      < Hero />
     </div>
   );
 };

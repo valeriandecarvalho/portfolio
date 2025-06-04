@@ -1,8 +1,11 @@
 import React from 'react'
+import {HeroText} from "./utilities"
 
 const Hero = () => {
   return (
-    <div>Hero</div>
+      <section className="flex items-start justify-center min-h-screen overflow-hidden md:items-start md:justify-start c-space">
+        <HeroText />
+      </section>
   )
 }
 
