@@ -1,5 +1,8 @@
 import HeroText from './HeroText';
+import HeroBackground from './HeroBackground.jsx'
+
 
 export {
-    HeroText
+    HeroText,
+    HeroBackground
 }

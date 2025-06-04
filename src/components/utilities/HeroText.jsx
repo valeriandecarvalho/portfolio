@@ -58,28 +58,39 @@ const HeroText = () => {
                           animate="visible"
                           transition={{delay: 1}}
               />
-              <p className="font-medium">
+              <motion.p className="font-medium"
+                        variants={variants}
+                        initial="hidden"
+                        animate="visible"
+                        transition={{delay: 1.2}}>
                   <span className="text-2xl text-neutral-300">
                       Je suis&nbsp;
                   </span>
                   <span className="text-5xl">
                       Étudiant<br/>
                   </span>
-              </p>
-              <p className="font-medium -mt-6">
                   <span className="text-2xl text-neutral-300">
                       en&nbsp;
                   </span>
                   <span className="text-5xl">
                       informatique
                   </span>
-              </p>
-              <p className="font-medium">
-                  <span className="text-4xl text-neutral-300">
-                      Je recherche des<br/>
-                  </span>
+              </motion.p>
+              <motion.p className="text-4xl text-neutral-300 font-medium"
+                        variants={variants}
+                        initial="hidden"
+                        animate="visible"
+                        transition={{delay: 1.5}}>
+                      Je recherche des
+
+              </motion.p>
+              <motion.div className="-mt-6"
+                  variants={variants}
+                  initial="hidden"
+                  animate="visible"
+                  transition={{delay: 1.8}}>
                   <FlipWords words={words} className="text-7xl font-medium"/>
-              </p>
+              </motion.div>
           </div>
       </div>
   )
