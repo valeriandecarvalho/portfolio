@@ -1,11 +1,13 @@
 import HeroText from './HeroText';
 import HeroBackground from './HeroBackground.jsx';
-import {SpaceMan} from "./SpaceMan.jsx";
+import {Robot} from "./Robot.jsx";
 import Loader from './Loader.jsx';
+import Card from './Card.jsx';
 
 export {
     HeroText,
     HeroBackground,
-    SpaceMan,
-    Loader
+    Robot,
+    Loader,
+    Card
 }

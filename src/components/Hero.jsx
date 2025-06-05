@@ -1,9 +1,7 @@
 import React, {Suspense} from 'react'
-import {HeroText, HeroBackground, SpaceMan, Loader} from "./utilities"
-import {Canvas, useFrame} from "@react-three/fiber";
+import {HeroText, HeroBackground,Robot, Loader} from "./utilities"
+import {Canvas} from "@react-three/fiber";
 import {useMediaQuery} from "react-responsive";
-import {easing} from "maath";
-import {Float} from "@react-three/drei";
 
 const Hero = () => {
     const isMobile = useMediaQuery({ maxWidth: 853 });
@@ -15,30 +13,15 @@ const Hero = () => {
             className="absolute inset-0"
             style={{width: "100vw", height: "100vh"}}
         >
-            <Canvas camera={{position: [0, 1, 3]}}>
+            <Canvas camera={{position: [0, 0, 1.75]}}>
                 <Suspense fallback={<Loader/>}>
-                    <Float>
-                        <SpaceMan
-                        scale={isMobile && 0.2}
-                        position={isMobile && [0, -1.5, 0]}/>
-                    </Float>
-                    <Rig/>
+                        <Robot
+                            scale ={isMobile ? 0.005 : 0.0075}
+                            position={isMobile ?[0,-1.75,-0.85] : [0,-1.75,-0.9]}/>
                 </Suspense>
             </Canvas>
         </figure>
       </section>
   )
 }
-
-function Rig() {
-    return useFrame((state, delta) => {
-        easing.damp3(
-            state.camera.position,
-            [state.mouse.x / 10, 1 + state.mouse.y / 10, 3],
-            0.5,
-            delta
-        );
-    });
-}
-
 export default Hero
