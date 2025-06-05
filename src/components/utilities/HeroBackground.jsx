@@ -1,14 +1,15 @@
 import React from "react";
-import {motion, useScroll, useTransform} from "motion/react";
+import {motion, useScroll, useTransform, useSpring} from "motion/react";
 
 const HeroBackground = () => {
     const {scrollYProgress} = useScroll();
+    const x = useSpring(scrollYProgress, {damping: 50});
     const mountain3Y =
-        useTransform(scrollYProgress, [0,0.5], ["0%", "70%"]);
+        useTransform(x, [0,0.5], ["0%", "70%"]);
     const mountain2Y =
-        useTransform(scrollYProgress, [0,0.5], ["0%", "50%"]);
+        useTransform(x, [0,0.5], ["0%", "50%"]);
     const mountain1Y =
-        useTransform(scrollYProgress, [0,0.5], ["0%", "0%"]);
+        useTransform(x, [0,0.5], ["0%", "0%"]);
     return (
         <section className="absolute inset-0 bg-black/40">
             <div className="relative h-screen overflow-y-hidden">
