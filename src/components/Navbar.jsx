@@ -6,13 +6,13 @@ function Navigation() {
     return (
         <ul className="nav-ul">
             <li className="nav-li">
-                <a className="nav-link" href="">
-                    Menu
+                <a className="nav-link" href="#accueil">
+                    Accueil
                 </a>
             </li>
             <li className="nav-li">
-                <a className="nav-link" href="">
-                    Expériences
+                <a className="nav-link" href="#projets">
+                    Projets
                 </a>
             </li>
             <li className="nav-li">
@@ -22,7 +22,7 @@ function Navigation() {
             </li>
             <li className="nav-li">
                 <a className="nav-link" href="">
-                    Projets
+                    Expériences
                 </a>
             </li>
             <li className="nav-li">

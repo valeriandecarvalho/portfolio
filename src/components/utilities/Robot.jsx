@@ -20,8 +20,12 @@ export function Robot(props) {
             actions[animations[0].name]?.play();
         }
     }, [actions, animations]);
-    const yPosition = useMotionValue(5);
-    const ySpring = useSpring(yPosition, { damping: 30 });
+    const yPosition = useMotionValue(2);
+    const ySpring = useSpring(yPosition, {
+        damping: 20,     // Moins de résistance => mouvement plus long/doux
+        stiffness: 40,   // Moins de "réactivité" => plus smooth
+        mass: 1.5        // Plus lourd = mouvement plus progressif
+    });
     useEffect(() => {
         ySpring.set(-1.75);
     }, [ySpring]);
