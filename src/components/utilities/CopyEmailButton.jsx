@@ -1,19 +1,20 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { copy , copydone } from "../../assets";
+import { copy, copydone } from "../../assets";
+import { EMAIL } from "../../config/GetEmail";
 
 const CopyEmailButton = () => {
     const [copied, setCopied] = useState(false);
-    const email = "MAIL";
 
     const copyToClipboard = () => {
-        navigator.clipboard.writeText(email);
+        navigator.clipboard.writeText(EMAIL);
         setCopied(true);
 
         setTimeout(() => {
             setCopied(false);
         }, 2000);
     };
+
     return (
         <motion.button
             onClick={copyToClipboard}
