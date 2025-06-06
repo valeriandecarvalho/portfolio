@@ -1,7 +1,7 @@
 import React from 'react'
 import {useRef} from "react";
 import { git_card, raspberry_card, java_card } from "../assets/card";
-import {Card, Globe, CopyEmailButton} from './utilities'
+import {Card, Globe, CopyEmailButton, SkillsCircle} from './utilities'
 
 const About = () => {
     const grid2container = useRef();
@@ -64,6 +64,16 @@ const About = () => {
         </div>
         {/* Grid 5 */}
         <div className="grid-default-color grid-5">
+            <div className="z-10 w-[50%]">
+                <p className="headText">Teck Stack</p>
+                <p className="subtext">
+                    I specialize in a variety of languages, frameworks, and tools taht
+                    allow me to build robust and scalable applications
+                </p>
+            </div>
+            <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">
+                <SkillsCircle />
+            </div>
         </div>
       </div>
     </section>
