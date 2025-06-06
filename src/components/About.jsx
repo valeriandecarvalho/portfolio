@@ -1,7 +1,7 @@
 import React from 'react'
 import {useRef} from "react";
 import { git_card, raspberry_card, java_card } from "../assets/card";
-import {Card} from './utilities'
+import {Card, Globe, CopyEmailButton} from './utilities'
 
 const About = () => {
     const grid2container = useRef();
@@ -45,9 +45,22 @@ const About = () => {
         </div>
         {/* Grid 3 */}
         <div className="grid-black-color grid-3">
+            <div className="z-10">
+                <p className="headtext">Fuseau Horaire</p>
+                <p className="subtext w-[50%]">Étudiant basé en France, je cherche des opportunités, en Europe ou à l’international, en remote ou sur site.</p>
+            </div>
+            < figure className="absolute left-[35%] top-[10%]">
+                < Globe />
+            </figure>
         </div>
         {/* Grid 4 */}
         <div className="grid-special-color grid-4">
+            <div className="flex flex-col items-center justify-center gap-4 size-full">
+                <p className="text-center headtext">
+                    On échange sur une future opportunité ?
+                </p>
+                <CopyEmailButton />
+            </div>
         </div>
         {/* Grid 5 */}
         <div className="grid-default-color grid-5">

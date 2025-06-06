@@ -1,40 +1,42 @@
 import { useState } from "react";
 import { menu, close, logo } from "../assets";
-import { motion } from "motion/react";
 
-function Navigation() {
+function Navigation({ onLinkClick }) {
     return (
         <ul className="nav-ul">
-            <li className="nav-li">
-                <a className="nav-link" href="#accueil">
-                    Accueil
-                </a>
-            </li>
-            <li className="nav-li">
-                <a className="nav-link" href="#projets">
-                    Projets
-                </a>
-            </li>
-            <li className="nav-li">
-                <a className="nav-link" href="">
-                    Formations
-                </a>
-            </li>
-            <li className="nav-li">
-                <a className="nav-link" href="">
-                    Expériences
-                </a>
-            </li>
-            <li className="nav-li">
-                <a className="nav-link" href="">
-                    Contacter
-                </a>
-            </li>
+            {[
+                { id: "#accueil", label: "Accueil" },
+                { id: "#projets", label: "Projets" },
+                { id: "#formations", label: "Formations" },
+                { id: "#experiences", label: "Expériences" },
+                { id: "#contacter", label: "Contacter" },
+            ].map(({ id, label }) => (
+                <li key={id} className="nav-li">
+                    <a
+                        href={id}
+                        className="nav-link"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            onLinkClick(id);
+                        }}
+                    >
+                        {label}
+                    </a>
+                </li>
+            ))}
         </ul>
     );
 }
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+
+    const handleLinkClick = (id) => {
+        const el = document.querySelector(id);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+        setIsOpen(false);
+    };
+
     return (
         <div className="fixed inset-x-0 z-20 w-full backdrop-blur-lg bg-primary/40">
             <div className="mx-auto c-space max-w-7xl">
@@ -50,29 +52,19 @@ const Navbar = () => {
                         onClick={() => setIsOpen(!isOpen)}
                         className="flex cursor-pointer text-neutral-400 hover:text-white focus:outline-none md:hidden"
                     >
-                        <img
-                            src={isOpen ? close : menu}
-                            className="w-6 h-6"
-                            alt="toggle"
-                        />
+                        <img src={isOpen ? close : menu} className="w-6 h-6" alt="toggle" />
                     </button>
                     <nav className="hidden md:flex">
-                        <Navigation />
+                        <Navigation onLinkClick={handleLinkClick} />
                     </nav>
                 </div>
             </div>
             {isOpen && (
-                <motion.div
-                    className="block overflow-hidden text-center md:hidden"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    style={{ maxHeight: "100vh" }}
-                    transition={{ duration: 1 }}
-                >
+                <div className="block text-center md:hidden">
                     <nav className="flex flex-col items-center space-y-4 pb-5">
-                        <Navigation />
+                        <Navigation onLinkClick={handleLinkClick} />
                     </nav>
-                </motion.div>
+                </div>
             )}
         </div>
     );

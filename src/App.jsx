@@ -1,4 +1,4 @@
-import {Navbar, Hero, Projects, About} from "./components";
+import {Navbar, Hero, Projects, About, Education, Experience, Contact} from "./components";
 
 const App = ()  => {
   return(
@@ -7,8 +7,9 @@ const App = ()  => {
       < Hero />
       < About />
       < Projects />
-      <section className="min-h-screen"/>
-      <section className="min-h-screen"/>
+      < Education />
+      < Experience />
+      < Contact />
     </div>
   );
 };

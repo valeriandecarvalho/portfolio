@@ -16,15 +16,16 @@ const Hero = () => {
             className="absolute inset-0"
             style={{width: "100vw", height: "100vh"}}
         >
-            <Canvas camera={{position: [0, 0, 1.75]}}>
+            <Canvas camera={{position: [0, -0.1, -0.5]}}>
                 <Suspense fallback={<Loader/>}>
                         <Robot
-                            scale ={isMobile ? 0.005 : 0.0075}
-                            position={isMobile ?[0,-1.75,-0.85] : [0,-1.75,-0.9]}/>
+                            scale ={isMobile ? 0.5 : 0.75}
+                            position={isMobile ?[0,-0.28,0] : [-0.05,-0.3,0]}/>
                 </Suspense>
             </Canvas>
         </figure>
       </section>
   )
 }
+
 export default Hero

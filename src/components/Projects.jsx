@@ -9,7 +9,7 @@ const Projects = () => {
           className="relative c-space section-spacing scroll-mt-12"
           id="projets"
       >
-      <h2 className="text-heading">My Selected Projects</h2>
+      <h2 className="text-heading">Projets Sélectionnés</h2>
     <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent mt-12 h-[1px] w-full" />
       </section>);
 };

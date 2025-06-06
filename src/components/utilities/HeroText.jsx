@@ -66,17 +66,17 @@ const HeroText = () => {
                   <span className="text-2xl text-neutral-300">
                       Je suis&nbsp;
                   </span>
-                  <span className="text-5xl">
+                  <span className="text-4xl">
                       Étudiant<br/>
                   </span>
                   <span className="text-2xl text-neutral-300">
                       en&nbsp;
                   </span>
-                  <span className="text-5xl">
+                  <span className="text-4xl">
                       informatique
                   </span>
               </motion.p>
-              <motion.p className="text-4xl text-neutral-300 font-medium"
+              <motion.p className="text-3xl text-neutral-300 font-medium"
                         variants={variants}
                         initial="hidden"
                         animate="visible"
@@ -89,7 +89,7 @@ const HeroText = () => {
                   initial="hidden"
                   animate="visible"
                   transition={{delay: 1.8}}>
-                  <FlipWords words={words} className="text-7xl font-medium"/>
+                  <FlipWords words={words} className="text-6xl font-medium"/>
               </motion.div>
           </div>
       </div>
