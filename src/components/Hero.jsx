@@ -18,7 +18,7 @@ const Hero = () => {
         >
             <Canvas camera={{position: [0, -0.1, -0.5]}}>
                 <Suspense fallback={<Loader/>}>
-                        <Robot
+                    <Robot
                             scale ={isMobile ? 0.5 : 0.75}
                             position={isMobile ?[0,-0.28,0] : [-0.05,-0.3,0]}/>
                 </Suspense>

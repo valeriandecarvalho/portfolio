@@ -7,7 +7,7 @@ import {Globe} from "./Globe.jsx";
 import CopyEmailButton from "./CopyEmailButton.jsx";
 import {OrbitingCircles} from "./OrbitingCircles.jsx";
 import {SkillsCircle} from "./SkillsCircle.jsx";
-
+import Project from "./Project.jsx";
 
 export {
     HeroText,
@@ -18,5 +18,6 @@ export {
     Globe,
     CopyEmailButton,
     OrbitingCircles,
-    SkillsCircle
+    SkillsCircle,
+    Project
 }
