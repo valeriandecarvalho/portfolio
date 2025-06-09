@@ -9,6 +9,8 @@ import {OrbitingCircles} from "./OrbitingCircles.jsx";
 import {SkillsCircle} from "./SkillsCircle.jsx";
 import Project from "./Project.jsx";
 import SectionWrapper from "./SectionWrapper.jsx";
+import Alert from "./Alert.jsx";
+import {Particles} from "./Particles.jsx";
 
 export {
     HeroText,
@@ -22,4 +24,6 @@ export {
     SkillsCircle,
     Project,
     SectionWrapper,
+    Alert,
+    Particles,
 }

@@ -10,7 +10,6 @@ const App = ()  => {
       < Education />
       < Experience />
       < Contact />
-      <section className="min-h-screen"/>
     </div>
   );
 };
