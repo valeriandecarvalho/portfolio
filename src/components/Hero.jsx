@@ -13,8 +13,7 @@ const Hero = () => {
         <HeroText />
         <HeroBackground />
         <figure
-            className="absolute inset-0"
-            style={{width: "100vw", height: "100vh"}}
+            className="absolute inset-0 w-full h-screen"
         >
             <Canvas camera={{position: [0, -0.1, -0.5]}}>
                 <Suspense fallback={<Loader/>}>

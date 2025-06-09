@@ -2,7 +2,6 @@ import Hero from './Hero';
 import Navbar from './Navbar';
 import About from './About';
 import Projects from './Projects';
-import Tech from './Tech';
 import Experience from './Experience';
 import Education from './Education.jsx';
 import Feedbacks from './Feedbacks';
@@ -13,7 +12,6 @@ export {
   Navbar,
   About,
   Projects,
-  Tech,
   Experience,
   Education,
   Feedbacks,
