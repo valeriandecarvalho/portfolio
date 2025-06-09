@@ -1,10 +1,8 @@
 "use client";
-import { useScroll, useTransform, motion } from "motion/react";
+import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
-export const Timeline = ({
-                             data
-                         }) => {
+export const Timeline = ({ data }) => {
     const ref = useRef(null);
     const containerRef = useRef(null);
     const [height, setHeight] = useState(0);
@@ -25,18 +23,16 @@ export const Timeline = ({
     const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
     return (
-        <div
-            className="w-full "
-            ref={containerRef}>
+        <div className="c-space" ref={containerRef}>
             <div ref={ref} className="relative pb-20">
                 {data.map((item, index) => (
                     <div
                         key={index}
                         className="flex justify-start pt-10 md:pt-40 md:gap-10"
                     >
-                        <div className="sticky top-40 flex flex-col items-center self-start max-w-xs md:flex-row lg:max-w-sm md:w-full">
-                            <div className="absolute flex items-center justify-center w-10 h-10 rounded-full -left-[15px] bg-midnight">
-                                <div className="w-4 h-4 p-2 border rounded-full bg-neutral-800 border-neutral-700" />
+                        <div className="sticky flex flex-col items-center self-start max-w-xs md:flex-row top-40 lg:max-w-sm md:w-full">
+                            <div className="absolute z-20 flex items-center justify-center w-10 h-10 rounded-full -left-[15px] bg-gradient-to-br from-purple-600 to-indigo-600 shadow-lg shadow-indigo-700">
+                                <div className="w-3 h-3 rounded-full bg-white shadow-inner shadow-white/80" />
                             </div>
                             <div className="flex-col hidden gap-2 text-xl font-bold md:flex md:pl-20 md:text-4xl text-neutral-300">
                                 <h3>{item.date}</h3>
@@ -58,13 +54,20 @@ export const Timeline = ({
                         </div>
                     </div>
                 ))}
-                <motion.div
+                <div
                     style={{
-                        height: heightTransform,
-                        opacity: opacityTransform,
+                        height: height + "px",
                     }}
-                    className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-purple-500 via-lavender/50 to-transparent from-[0%] via-[10%] rounded-full"
-                />
+                    className="absolute md:left-0.5 left-0.5 top-0 overflow-hidden w-[6px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-700 to-transparent to-[99%]  [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] "
+                >
+                    <motion.div
+                        style={{
+                            height: heightTransform,
+                            opacity: opacityTransform,
+                        }}
+                        className="absolute inset-x-0 top-0 w-[6px] bg-gradient-to-b from-white via-white/70 to-transparent rounded-full"
+                    />
+                </div>
             </div>
         </div>
     );

@@ -33,7 +33,12 @@ const Navbar = () => {
 
     const handleLinkClick = (id) => {
         const el = document.querySelector(id);
-        if (el) el.scrollIntoView({ behavior: "smooth" });
+        if (el) {
+            const offset = -80; // décalage vers le haut en pixels (ajuste selon la hauteur de ta navbar)
+            const y = el.getBoundingClientRect().top + window.scrollY + offset;
+
+            window.scrollTo({ top: y, behavior: "smooth" });
+        }
         setIsOpen(false);
     };
 

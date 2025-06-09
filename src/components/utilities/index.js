@@ -8,6 +8,7 @@ import CopyEmailButton from "./CopyEmailButton.jsx";
 import {OrbitingCircles} from "./OrbitingCircles.jsx";
 import {SkillsCircle} from "./SkillsCircle.jsx";
 import Project from "./Project.jsx";
+import SectionWrapper from "./SectionWrapper.jsx";
 
 export {
     HeroText,
@@ -19,5 +20,6 @@ export {
     CopyEmailButton,
     OrbitingCircles,
     SkillsCircle,
-    Project
+    Project,
+    SectionWrapper,
 }
