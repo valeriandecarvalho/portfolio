@@ -15,14 +15,14 @@ const About = () => {
         <div className="flex items-end grid-default-color grid-1">
             <img
                 src="/grid_1.svg"
-                className="absolute scale-[1.5] right-[-1rem] top-[6rem]
+                className="absolute scale-[1] right-[-1rem] top-[5.5rem]
                 md:scale-[2.75] md:left-1 md:top-[65%]
                 lg:scale-[2.25] lg:top-[70%]"
             />
             <div className="z-10 absolute top-0 left-0 right-0 p-6">
-                <p className="headtext">Title 1</p>
+                <p className="headtext">Technologies Innovantes</p>
                 <p className="subtext">
-                    Text
+                    Étudiant passionné par l'innovation technologique, j'explore avec curiosité la robotique, l'IA, l'IoT et la blockchain. Ces domaines nourrissent ma soif d'apprendre et d'expérimenter.
                 </p>
             </div>
         </div>
@@ -46,31 +46,31 @@ const About = () => {
         {/* Grid 3 */}
         <div className="grid-black-color grid-3">
             <div className="z-10">
-                <p className="headtext">Fuseau Horaire</p>
-                <p className="subtext w-[50%]">Étudiant basé en France, je cherche des opportunités, en Europe ou à l’international, en remote ou sur site.</p>
+                <p className="headtext">Ouverture Internationale</p>
+                <p className="subtext w-[45%] md:w-[75%] lg:w-[60%]">Basé en France, ma passion pour la découverte m'ouvre aux opportunités européennes et internationales. Prêt à explorer de nouveaux environnements, en remote ou sur site.</p>
             </div>
-            < figure className="absolute left-[35%] top-[10%]">
+            < figure className="absolute left-[40%] md:left-[60%] lg:left-[50%] top-[10%]">
                 < Globe />
             </figure>
         </div>
         {/* Grid 4 */}
-        <div className="grid-special-color grid-4">
-            <div className="flex flex-col items-center justify-center gap-4 size-full">
-                <p className="text-center headtext">
-                    On échange sur une future opportunité ?
-                </p>
-                <CopyEmailButton />
-            </div>
-        </div>
+          <div className="grid-special-color grid-4 flex items-center justify-center">
+              <div className="flex flex-col items-center justify-center gap-4 size-">
+                  <p className="text-center mt-2 mb-2 text-lg">
+                      Une opportunité ? Discutons ensemble des possibilités !
+                  </p>
+                  <CopyEmailButton />
+              </div>
+          </div>
         {/* Grid 5 */}
         <div className="grid-default-color grid-5">
-            <div className="z-10 w-[50%]">
-                <p className="headText">Title 2</p>
+            <div className="z-10 w-[60%]">
+                <p className="headtext">Stack Technique</p>
                 <p className="subtext">
-                    Text
+                    Formation académique et auto-apprentissage m'ont permis d'acquérir une base technique solide. Du développement logiciel au hardware embarqué, je continue d'élargir mes compétences.
                 </p>
             </div>
-            <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">
+            <div className="absolute inset-y-0 md:inset-y-5 w-full h-full start-[50%] md:scale-90 sm:scale-120 ">
                 <SkillsCircle />
             </div>
         </div>

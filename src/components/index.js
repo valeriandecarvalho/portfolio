@@ -5,6 +5,7 @@ import Projects from './Projects';
 import Experience from './Experience';
 import Education from './Education.jsx';
 import Contact from './Contact';
+import Footer from './Footer';
 
 export {
   Hero,
@@ -13,5 +14,6 @@ export {
   Projects,
   Experience,
   Education,
-  Contact
+  Contact,
+  Footer,
 }

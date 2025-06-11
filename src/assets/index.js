@@ -28,10 +28,10 @@ import threejs from "./tech/threejs.svg";
 import arrowright from "./arrow-right.svg";
 import arrowup from "./arrow-up.svg";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
+import meta from "./logos/company/meta.png";
+import shopify from "./logos/company/shopify.png";
+import starbucks from "./logos/company/starbucks.png";
+import tesla from "./logos/company/tesla.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
