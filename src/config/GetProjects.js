@@ -1,3 +1,5 @@
+import { reactjs, tailwind } from '../assets';
+
 export const myProjects = [
     {
         id: 1,
@@ -14,23 +16,13 @@ export const myProjects = [
         tags: [
             {
                 id: 1,
-                name: "C#",
-                path: "/assets/logos/csharp.svg",
+                name: "React",
+                path: reactjs,
             },
             {
                 id: 2,
-                name: ".Net",
-                path: "/assets/logos/dotnet.svg",
-            },
-            {
-                id: 3,
-                name: "Ef Core",
-                path: "/assets/logos/efcore.png",
-            },
-            {
-                id: 4,
                 name: "TailwindCSS",
-                path: "/assets/logos/tailwindcss.svg",
+                path: tailwind,
             },
         ],
     },

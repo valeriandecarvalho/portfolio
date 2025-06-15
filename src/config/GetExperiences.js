@@ -1,35 +1,26 @@
 export const myExperiences = [
     {
-        title: "Software Developer",
-        job: "Security & Defense Projects",
-        date: "2021-2023",
+        title: "Tuteur",
+        job: "AFEV · Engagement Associatif",
+        date: "Janv. 2021 - Juin 2021",
         contents: [
-            "Enhanced application security and developed new features, adhering to standards set by the Passive Defense Organization and National Cyberspace Center.",
-            "Designed and implemented intuitive map interfaces using MapsUI, enhancing user experience and enabling seamless interactive map integration.",
-            "Developed applications for industrial automation, leveraging C++ and the Fatek API for PLC communication.",
-            "Enhanced responsiveness and usability of applications using Windows Forms and WPF frameworks.",
-            "Executed XML to SVG conversions using X-DOM, ensuring dynamic and efficient data visualization.",
+            "Accompagnement hebdomadaire de jeunes en difficulté scolaire dans le cadre d'un programme d'action sociale",
+            "Mise en place d'un cadre d'écoute active favorisant l'épanouissement personnel et la confiance en soi",
+            "Transmission de méthodologies d'apprentissage adaptées à chaque bénéficiaire",
+            "Conseil et orientation personnalisés pour favoriser la réussite éducative",
+            "Participation active à la vie associative et aux projets collectifs de l'organisation"
         ],
     },
     {
-        title: "Back-End Developer",
-        job: "Car Manufacture",
-        date: "2023-2024",
+        title: "Vendeur",
+        job: "Conforama · CDD",
+        date: "Juin 2024 - Août 2024",
         contents: [
-            "Engineered systems for large-scale data ingestion and analysis, ensuring efficient data processing and storage.",
-            "Developed back-end systems enabling vehicle-to-cloud communication for telemetry, diagnostics, and remote control:",
-            "✅ Implemented secure APIs, following ISO 26262 automotive safety standards.",
-            "✅ Ensured data privacy for customers and partners through industry-compliant protocols.",
-            "✅ Delivered remote features like over-the-air updates, real-time tracking, and remote start capabilities.",
-        ],
-    },
-    {
-        title: "Freelance Developer",
-        job: "Self-Employed",
-        date: "2025-Present",
-        contents: [
-            "Created a personal portfolio using Three.js, React, Vite, and WebAPI to showcase technical expertise.",
-            "Continuously enhancing technical skills and expanding expertise in modern web development and back-end technologies.",
+            "Service client personnalisé : conseil produit, accompagnement sur mesure et fidélisation de la clientèle",
+            "Gestion autonome des ventes : encaissements, merchandising et gestion du rayon",
+            "Collaboration en équipe pour atteindre les objectifs commerciaux mensuels",
+            "Expertise produit dans les domaines de l’électroménager et de l’électronique",
+
         ],
     },
 ];

@@ -4,6 +4,7 @@ export const myCertifications = [
         title: "Cours accéléré Semrush sur le SEO avec Brian Dean",
         company: "Semrush",
         period: "Nov 2023 - Nov 2024",
+        relevance: 1,
         description: [
             "-Découvrir les fondamentaux du SEO",
             "-Comprendre l’importance des mots clés, du contenu et des backlinks",
@@ -16,6 +17,7 @@ export const myCertifications = [
         title: "SEO Principles: An Essential Guide for Beginners",
         company: "Semrush",
         period: "Nov 2023",
+        relevance: 1,
         description: [
             "-Comprendre les principes du SEO On-page",
             "-Assimiler les concepts du SEO technique",
@@ -28,6 +30,7 @@ export const myCertifications = [
         title: "Augmentez votre trafic grâce au référencement naturel (SEO)",
         company: "OpenClassrooms",
         period: "Dec 2023",
+        relevance: 1,
         description: [
             "-Intégrer le SEO en stratégie marketing",
             "-Maîtriser les principes des moteurs de recherche",
@@ -40,6 +43,7 @@ export const myCertifications = [
         title: "Développez votre personal branding",
         company: "OpenClassrooms",
         period: "Dec 2023",
+        relevance: 1,
         description: [
             "-Élaborer une stratégie de marque personnelle",
             "-Cibler les canaux adaptés",
@@ -52,6 +56,7 @@ export const myCertifications = [
         title: "Optimisez le référencement de votre site (SEO) en améliorant ses performances techniques",
         company: "OpenClassrooms",
         period: "Dec 2023",
+        relevance: 1,
         description: [
             "-Diagnostiquer et optimiser la crawlabilité d’un site",
             "-Accélérer le chargement d’un site",
@@ -64,6 +69,7 @@ export const myCertifications = [
         title: "Initiez-vous au marketing digital",
         company: "OpenClassrooms",
         period: "Dec 2023",
+        relevance: 1,
         description: [
             "-Comprendre le marketing digital",
             "-Élaborer un plan marketing",
@@ -76,6 +82,7 @@ export const myCertifications = [
         title: "Initiez-vous à la comptabilité",
         company: "OpenClassrooms",
         period: "Jan 2024",
+        relevance: 1,
         description: [
             "-Apprendre les bases essentielles de la comptabilité",
             "-Comprendre et s’approprier la logique comptable",
@@ -88,6 +95,7 @@ export const myCertifications = [
         title: "Gérez du code avec Git et GitHub",
         company: "OpenClassrooms",
         period: "Fev 2024",
+        relevance: 2,
         description: [
             "-Installer et configurer Git et GitHub",
             "-Utiliser les commandes de base de Git",
@@ -100,6 +108,7 @@ export const myCertifications = [
         title: "Installez votre environnement de développement Java avec Eclipse",
         company: "OpenClassrooms",
         period: "Fev 2024",
+        relevance: 2,
         description: [
             "-Identifier les outils nécessaires pour coder en Java",
             "-Utiliser Eclipse pour coder, tester et structurer vos projets Java",
@@ -112,6 +121,7 @@ export const myCertifications = [
         title: "Découvrez le fonctionnement des algorithmes",
         company: "OpenClassrooms",
         period: "Fev 2024",
+        relevance: 2,
         description: [
             "-Décrire le fonctionnement d’un algorithme",
             "-Choisir le type et la structure de données adéquats",
@@ -124,6 +134,7 @@ export const myCertifications = [
         title: "Apprenez à programmer en Java",
         company: "OpenClassrooms",
         period: "Mar 2024",
+        relevance: 2,
         description: [
             "-Gérer les variables d’un programme en Java",
             "-Utiliser les principes de programmation orientée objet en Java",
@@ -136,6 +147,7 @@ export const myCertifications = [
         title: "Apprenez à programmer avec JavaScript",
         company: "OpenClassrooms",
         period: "Jul 2024",
+        relevance: 2,
         description: [
             "-Contrôler le flux d'exécution du code",
             "-Modifier dynamiquement une page web et ses éléments",
@@ -148,6 +160,7 @@ export const myCertifications = [
         title: "Apprenez à programmer en C",
         company: "OpenClassrooms",
         period: "Oct 2024",
+        relevance: 2,
         description: [
             "-Apprendre le langage C par la pratique",
             "-Optimiser la gestion des fichiers et fonctions",
@@ -160,6 +173,7 @@ export const myCertifications = [
         title: "Créez des pages web dynamiques avec JavaScript",
         company: "OpenClassrooms",
         period: "Oct 2024",
+        relevance: 2,
         description: [
             "Conception de maquettes interactives",
             "Tests utilisateurs et itérations",
@@ -172,6 +186,7 @@ export const myCertifications = [
         title: "Développez votre première application Android",
         company: "OpenClassrooms",
         period: "Nov 2024",
+        relevance: 2,
         description: [
             "-Concevoir une première application",
             "-Définir une interface graphique adaptée",
@@ -184,6 +199,7 @@ export const myCertifications = [
         title: "Introduction to SQL",
         company: "DataCamp",
         period: "Dec 2024",
+        relevance: 2,
         description: [
             "-Comprendre l’organisation des bases de données relationnelles",
             "-Apprendre à écrire des requêtes SQL pour extraire des données",
@@ -196,6 +212,7 @@ export const myCertifications = [
         title: "Intermediate SQL",
         company: "DataCamp",
         period: "Dec 2024",
+        relevance: 2,
         description: [
             "-Filtrer et comparer les données pour extraire des informations",
             "-Utiliser les fonctions d'agrégation pour analyser les données",
@@ -208,6 +225,7 @@ export const myCertifications = [
         title: "TOEIC® Listening and Reading: 965/990",
         company: "ETS",
         period: "Jan 2025 - Jan 2027",
+        relevance: 3,
         description: [
             "-Lire et comprendre des documents complexes en anglais",
             "-Suivre et analyser des discussions détaillées en anglais",

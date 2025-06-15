@@ -1,5 +1,4 @@
-import ut from '../assets/logos/university/ut.png';
-import aalto from '../assets/logos/university/aalto.png';
+import { ut, aalto } from '../assets';
 
 export const myEducations = [
     {

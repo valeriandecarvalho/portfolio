@@ -1,4 +1,4 @@
-import {Navbar, Hero, Projects, About, Education, Experience, Contact, Footer} from "./components";
+import {Navbar, Hero, Projects, About, Education, Experience, Contact, Footer} from "./sections/index.js";
 
 const App = ()  => {
   return(
