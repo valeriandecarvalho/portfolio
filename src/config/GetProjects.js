@@ -1,17 +1,16 @@
-import { reactjs, tailwind } from '../assets';
+import { reactjs, tailwind, vitejs, javascript, webstorm} from '../assets';
 
 export const myProjects = [
     {
         id: 1,
         title: "Portfolio & Espace Personnel",
         description:
-            "Description",
+            "Site web portfolio moderne avec animations 3D, développé en React et stylisé avec TailwindCSS pour une expérience utilisateur immersive.",
         subDescription: [
-            "SubDescription 1",
-            "SubDescription 2",
+            "Interface interactive avec robot 3D animé (Three.js), effets de parallaxe et animations fluides grâce à Motion/Framer Motion.",
+            "Architecture modulaire responsive avec navigation par sections, système de filtrage pour les certifications et formulaire de contact fonctionnel via EmailJS.",
         ],
-        href: "",
-        logo: "",
+        href: "https://github.com/valeriandecarvalho/portfolio",
         image: "/projects/portfolio.webp",
         tags: [
             {
@@ -24,6 +23,22 @@ export const myProjects = [
                 name: "TailwindCSS",
                 path: tailwind,
             },
+            {
+                id: 3,
+                name: "ViteJS",
+                path: vitejs,
+            },
+            {
+                id: 4,
+                name: "JavaScript",
+                path: javascript,
+            },
+
+            {
+                id: 5,
+                name: "WebStorm",
+                path: webstorm,
+            },
         ],
     },
     {
@@ -35,7 +50,6 @@ export const myProjects = [
             "Coming Soon",
         ],
         href: "",
-        logo: "",
         image: "/projects/soon.png",
         tags: [],
     }

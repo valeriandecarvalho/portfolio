@@ -41,11 +41,18 @@ const ProjectDetails = ({
                                 />
                             ))}
                         </div>
-                        <a className="inline-flex items-center gap-1 font-medium cursor-pointer hover-animation">
-                            <img src={github} alt="GitHub" className="w-7 h-7" />
-                            GitHub
-                            <img src={arrowup} className="size-4" href={href} />
-                        </a>
+                        {href && (
+                            <a
+                                href={href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1 font-medium cursor-pointer hover-animation text-white hover:text-gray-300"
+                            >
+                                <img src={github} alt="GitHub" className="w-7 h-7" />
+                                GitHub
+                                <img src={arrowup} className="size-4" />
+                            </a>
+                        )}
                     </div>
                 </div>
             </motion.div>

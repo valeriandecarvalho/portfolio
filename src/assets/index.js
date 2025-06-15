@@ -34,6 +34,7 @@ import threejs from "./logos/stack/threejs.svg";
 import typescript from "./logos/stack/typescript.png";
 import vitejs from "./logos/stack/vitejs.svg";
 import vscode from "./logos/stack/vscode.svg";
+import webstorm from "./logos/stack/webstorm.png";
 
 import aalto from "./logos/university/aalto.png";
 import ut from "./logos/university/ut.png";
@@ -75,6 +76,7 @@ export {
   typescript,
   vitejs,
   vscode,
+  webstorm,
 
   aalto,
   ut,

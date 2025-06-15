@@ -27,22 +27,22 @@ const About = () => {
             </div>
         </div>
         {/* Grid 2 */}
-        <div className="grid-default-color grid-2">
-            <div ref={grid2container} className="flex items-center justify-center w-full h-full">
-                <p className="flex items-end text-5xl text-gray-500 text-center">
-                    Coder, C’est Créer
-                </p>
-                <Card style={{ rotate: "0deg", top: "10%", left: "5%" }} text="Robotique" className="bg-storm w-[9rem]" containerRef={grid2container}/>
-                <Card style={{ rotate: "20deg", top: "10%", left: "50%" }} text="Logiciel" className="bg-storm w-[9rem]" containerRef={grid2container}/>
-                <Card style={{ rotate: "-10deg", top: "70%", left: "60%" }} text="Cloud" className="bg-storm w-[6rem]" containerRef={grid2container}/>
-                <Card style={{ rotate: "-30deg", bottom: "20%", left: "75%" }} text="Data" className="bg-storm w-[6rem]" containerRef={grid2container}/>
-                <Card style={{ rotate: "-45deg", top: "65%", left: "1%" }} text="IA" className="bg-storm w-[6rem]" containerRef={grid2container}/>
-                <Card style={{ rotate: "5deg", top: "70%", left: "30%" }} text="Web" className="bg-storm w-[6rem]" containerRef={grid2container}/>
-                <Card  style={{ rotate: "30deg", top: "70%", left: "70%" }} image={java} containerRef={grid2container} borderColor="#f58219"/>
-                <Card  style={{ rotate: "-30deg", top: "20%", left: "20%" }} image={raspberry} containerRef={grid2container} borderColor="#bc1142"/>
-                <Card  style={{ rotate: "0deg", top: "20%", left: "70%" }} image={git} containerRef={grid2container} borderColor="#f03c2e"/>
-            </div>
-        </div>
+          <div ref={grid2container} className="grid-default-color grid-2 relative">
+              <div className="flex items-center justify-center w-full h-full">
+                  <p className="flex items-end text-5xl text-gray-500 text-center">
+                      Coder, C'est Créer
+                  </p>
+              </div>
+              <Card style={{ rotate: "0deg", top: "10%", left: "5%" }} text="Robotique" className="bg-storm w-[9rem]" containerRef={grid2container}/>
+              <Card style={{ rotate: "20deg", top: "10%", left: "50%" }} text="Logiciel" className="bg-storm w-[9rem]" containerRef={grid2container}/>
+              <Card style={{ rotate: "-10deg", top: "70%", left: "60%" }} text="Cloud" className="bg-storm w-[6rem]" containerRef={grid2container}/>
+              <Card style={{ rotate: "-30deg", bottom: "20%", left: "75%" }} text="Data" className="bg-storm w-[6rem]" containerRef={grid2container}/>
+              <Card style={{ rotate: "-45deg", top: "65%", left: "1%" }} text="IA" className="bg-storm w-[6rem]" containerRef={grid2container}/>
+              <Card style={{ rotate: "5deg", top: "70%", left: "30%" }} text="Web" className="bg-storm w-[6rem]" containerRef={grid2container}/>
+              <Card  style={{ rotate: "30deg", top: "70%", left: "70%" }} image={java} containerRef={grid2container} borderColor="#f58219"/>
+              <Card  style={{ rotate: "-30deg", top: "20%", left: "20%" }} image={raspberry} containerRef={grid2container} borderColor="#bc1142"/>
+              <Card  style={{ rotate: "0deg", top: "20%", left: "70%" }} image={git} containerRef={grid2container} borderColor="#f03c2e"/>
+          </div>
         {/* Grid 3 */}
         <div className="grid-black-color grid-3">
             <div className="z-10">

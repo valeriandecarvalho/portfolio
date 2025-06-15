@@ -1,5 +1,30 @@
 import { OrbitingCircles } from "./";
-import {   arduino, cplusplus, csharp, css, docker, figma, git, html, intellij, java, javascript, mongodb, nodejs, python, raspberry, reactjs, redux, stackoverflow, tailwind, threejs, typescript, vitejs, vscode, } from "../../../assets";
+import {
+    arduino,
+    cplusplus,
+    csharp,
+    css,
+    docker,
+    figma,
+    git,
+    html,
+    intellij,
+    java,
+    javascript,
+    mongodb,
+    nodejs,
+    python,
+    raspberry,
+    reactjs,
+    redux,
+    stackoverflow,
+    tailwind,
+    threejs,
+    typescript,
+    vitejs,
+    vscode,
+    webstorm,
+} from "../../../assets";
 
 export function SkillsCircle() {
     const skills = [
@@ -26,6 +51,7 @@ export function SkillsCircle() {
         { name: "typescript", icon: typescript },
         { name: "vitejs", icon: vitejs },
         { name: "vscode", icon: vscode },
+        { name: "webstorm", icon: webstorm },
     ];
 
     return (
