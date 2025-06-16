@@ -17,7 +17,7 @@ const Project = ({
                 <div className="w-full md:w-auto">
                     <p className="text-2xl">{title}</p>
                     <p className="mt-2 text-neutral-400 text-sm max-w-xl mx-auto md:mx-0">{description}</p>
-                    <div className="flex flex-wrap justify-center md:justify-start gap-5 mt-2 text-sand">
+                    <div className="flex flex-wrap justify-center md:justify-start gap-5 mt-2 text-purple-400">
                         {tags.map((tag) => (
                             <span key={tag.id}>{tag.name}</span>
                         ))}

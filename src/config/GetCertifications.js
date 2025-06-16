@@ -16,7 +16,7 @@ export const myCertifications = [
         id: 2,
         title: "SEO Principles: An Essential Guide for Beginners",
         company: "Semrush",
-        period: "Nov 2023",
+        period: "Nov 2023 - Nov 2024",
         relevance: 1,
         description: [
             "-Comprendre les principes du SEO On-page",

@@ -62,8 +62,6 @@ const Education = () => {
 
     const handleTabChange = (tab) => {
         setActiveTab(tab);
-        // Ne pas modifier l'URL lors du changement d'onglet manuel
-        // L'URL ne change que lors de navigation externe (liens de certification)
     };
 
     return (

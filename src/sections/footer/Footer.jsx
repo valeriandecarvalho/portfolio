@@ -1,22 +1,23 @@
+import { useState } from "react";
 import { mySocials } from "../../config/GetSocials.js";
 
 const Footer = () => {
+    const [showCGU, setShowCGU] = useState(false);
+    const [showPrivacy, setShowPrivacy] = useState(false);
+
     return (
-        <footer className="c-space py-8 mt-16">
+        <footer className="c-space py-8 mt-16 relative">
             {/* Ligne de séparation */}
             <div className="mb-8 bg-gradient-to-r from-transparent via-neutral-700 to-transparent h-[1px] w-full" />
 
             {/* Contenu principal du footer */}
             <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8">
-
-                {/* Section gauche - Copyright */}
                 <div className="order-3 lg:order-1">
                     <p className="text-sm text-neutral-400 text-center lg:text-left">
                         © 2025 Valérian. Tous droits réservés.
                     </p>
                 </div>
 
-                {/* Section centre - Réseaux sociaux */}
                 <div className="order-1 lg:order-2 flex items-center gap-4">
                     <span className="text-sm text-neutral-500 hidden sm:block">Suivez-moi :</span>
                     <div className="flex gap-4">
@@ -34,8 +35,6 @@ const Footer = () => {
                                     className="w-5 h-5 transition-transform duration-300 group-hover:scale-110"
                                     alt={social.name}
                                 />
-
-                                {/* Tooltip pour le nom du réseau social */}
                                 <span className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-neutral-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
                                     {social.name}
                                 </span>
@@ -44,33 +43,63 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Section droite - Liens légaux */}
                 <div className="order-2 lg:order-3">
                     <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-sm text-neutral-400">
-                        <a
-                            href="#"
+                        <button
+                            onClick={() => setShowCGU(true)}
                             className="hover:text-neutral-300 transition-colors duration-300 hover:underline"
                         >
                             Conditions générales
-                        </a>
+                        </button>
                         <span className="hidden sm:block text-neutral-600">|</span>
-                        <a
-                            href="#"
+                        <button
+                            onClick={() => setShowPrivacy(true)}
                             className="hover:text-neutral-300 transition-colors duration-300 hover:underline"
                         >
                             Politique de confidentialité
-                        </a>
+                        </button>
                     </div>
                 </div>
-
             </div>
 
-            {/* Section bonus - Message ou citation (optionnel) */}
+            {/* Section citation */}
             <div className="mt-8 pt-6 border-t border-neutral-800">
                 <p className="text-center text-xs text-neutral-500 italic">
                     "La technologie au service de l'innovation"
                 </p>
             </div>
+
+            {/* Modal CGU */}
+            {showCGU && (
+                <div className="fixed inset-0 bg-primary bg-opacity-60 flex items-center justify-center z-50">
+                    <div className="bg-royal p-6 rounded-xl max-w-xl w-full text-sm text-neutral-300">
+                        <h2 className="text-lg font-semibold mb-4">Conditions Générales d'Utilisation</h2>
+                        <p>Voici un exemple de contenu pour les conditions générales d'utilisation de ce site portfolio...</p>
+                        <button
+                            onClick={() => setShowCGU(false)}
+                            className="mt-4 bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded text-white"
+                        >
+                            Fermer
+                        </button>
+                    </div>
+                </div>
+            )}
+
+            {/* Modal Confidentialité */}
+            {showPrivacy && (
+                <div className="fixed inset-0 bg-primary bg-opacity-100 flex items-center justify-center z-50">
+                    <div className="bg-royal p-6 rounded-xl max-w-xl w-full text-sm text-neutral-300">
+                        <h2 className="text-lg font-semibold mb-4">Politique de Confidentialité</h2>
+                        <p>Voici un exemple de politique de confidentialité expliquant comment les données sont traitées...</p>
+                        <button
+                            onClick={() => setShowPrivacy(false)}
+                            className="mt-4 bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded text-white"
+                        >
+                            Fermer
+                        </button>
+                    </div>
+                </div>
+            )}
         </footer>
     );
 };

@@ -117,21 +117,115 @@ const Certifications = ({ initialFilters = {} }) => {
     return (
         <div>
             {/* Barre de recherche et filtres */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-6">
-                {/* Barre de recherche */}
-                <input
-                    type="text"
-                    placeholder="Rechercher par titre, entreprise ou compétence..."
-                    className="flex-1 p-3 rounded-lg bg-secondary/80 backdrop-blur-sm border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:bg-secondary transition-all"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                />
+            <div className="flex flex-col gap-4 mb-6">
+                {/* Première ligne - Barre de recherche */}
+                <div className="flex flex-col lg:flex-row gap-4">
+                    <input
+                        type="text"
+                        placeholder="Rechercher par titre, entreprise ou compétence..."
+                        className="flex-1 p-3 rounded-lg bg-secondary/80 backdrop-blur-sm border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:bg-secondary transition-all"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                    />
 
-                {/* Bouton de filtres */}
-                <div className="relative sm:w-auto" ref={filterRef}>
+                    {/* Bouton de filtres - À côté de la recherche seulement en lg+ */}
+                    <div className="relative lg:w-auto hidden lg:block" ref={filterRef}>
+                        <button
+                            onClick={() => setIsFilterOpen(!isFilterOpen)}
+                            className={`flex items-center gap-2 px-4 py-3 rounded-lg bg-secondary/80 backdrop-blur-sm border border-gray-700 text-white hover:bg-secondary transition-all duration-300 w-full lg:w-auto ${
+                                companyFilter ? 'ring-2 ring-primary' : ''
+                            }`}
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.707A1 1 0 013 7V4z"
+                                />
+                            </svg>
+                            Filtres
+                            {companyFilter && (
+                                <span className="bg-primary text-white text-xs px-2 py-1 rounded-full">
+                                    1
+                                </span>
+                            )}
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className={`h-4 w-4 transition-transform duration-200 ${isFilterOpen ? 'rotate-180' : ''}`}
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        {/* Menu déroulant des filtres pour lg+ */}
+                        {isFilterOpen && (
+                            <div className="absolute top-full left-0 lg:right-0 lg:left-auto w-full lg:w-80 mt-2 p-4 bg-secondary/95 backdrop-blur-sm border border-gray-700 rounded-lg shadow-xl z-50 space-y-4">
+                                {/* Filtre par entreprise */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                                        Entreprise
+                                    </label>
+                                    <select
+                                        value={companyFilter}
+                                        onChange={(e) => setCompanyFilter(e.target.value)}
+                                        className="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all appearance-none"
+                                        style={{ colorScheme: 'dark' }}
+                                    >
+                                        <option value="">Toutes les entreprises</option>
+                                        {companies.map((company, index) => (
+                                            <option key={index} value={company}>
+                                                {company}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+
+                                {/* Ordre de tri */}
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                                        Ordre de tri
+                                    </label>
+                                    <select
+                                        value={sortOrder}
+                                        onChange={(e) => setSortOrder(e.target.value)}
+                                        className="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all appearance-none"
+                                        style={{ colorScheme: 'dark' }}
+                                    >
+                                        <option value="relevance">Par pertinence</option>
+                                        <option value="recent">Plus récent en premier</option>
+                                        <option value="oldest">Plus ancien en premier</option>
+                                    </select>
+                                </div>
+
+                                {/* Bouton de réinitialisation */}
+                                <div className="pt-2">
+                                    <button
+                                        onClick={resetFilters}
+                                        className="w-full px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-all duration-300"
+                                    >
+                                        Réinitialiser les filtres
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </div>
+
+                {/* Deuxième ligne - Bouton de filtres pour sm et md */}
+                <div className="relative lg:hidden" ref={filterRef}>
                     <button
                         onClick={() => setIsFilterOpen(!isFilterOpen)}
-                        className={`flex items-center gap-2 px-4 py-3 rounded-lg bg-secondary/80 backdrop-blur-sm border border-gray-700 text-white hover:bg-secondary transition-all duration-300 w-full sm:w-auto ${
+                        className={`flex items-center gap-2 px-4 py-3 rounded-lg bg-secondary/80 backdrop-blur-sm border border-gray-700 text-white hover:bg-secondary transition-all duration-300 w-full ${
                             companyFilter ? 'ring-2 ring-primary' : ''
                         }`}
                     >
@@ -166,9 +260,9 @@ const Certifications = ({ initialFilters = {} }) => {
                         </svg>
                     </button>
 
-                    {/* Menu déroulant des filtres */}
+                    {/* Menu déroulant des filtres pour sm et md */}
                     {isFilterOpen && (
-                        <div className="absolute top-full left-0 right-0 sm:w-80 mt-2 p-4 bg-secondary/95 backdrop-blur-sm border border-gray-700 rounded-lg shadow-xl z-50 space-y-4">
+                        <div className="absolute top-full left-0 right-0 mt-2 p-4 bg-secondary/95 backdrop-blur-sm border border-gray-700 rounded-lg shadow-xl z-50 space-y-4">
                             {/* Filtre par entreprise */}
                             <div>
                                 <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -197,7 +291,7 @@ const Certifications = ({ initialFilters = {} }) => {
                                 <select
                                     value={sortOrder}
                                     onChange={(e) => setSortOrder(e.target.value)}
-                                    className="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all appearance-none"
+                                    className="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:outline-none focus:border-primary focus:border-primary transition-all appearance-none"
                                     style={{ colorScheme: 'dark' }}
                                 >
                                     <option value="relevance">Par pertinence</option>

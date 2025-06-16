@@ -7,24 +7,21 @@ export const myEducations = [
         date: "2022-2026",
         logo: ut,
         contents: [
-            "Enhanced application security and developed new features, adhering to standards set by the Passive Defense Organization and National Cyberspace Center.",
-            "Designed and implemented intuitive map interfaces using MapsUI, enhancing user experience and enabling seamless interactive map integration.",
-            "Developed applications for industrial automation, leveraging C++ and the Fatek API for PLC communication.",
-            "Enhanced responsiveness and usability of applications using Windows Forms and WPF frameworks.",
-            "Executed XML to SVG conversions using X-DOM, ensuring dynamic and efficient data visualization.",
+            "Programmation multi-paradigme avec Java, C, Python et OCaml (orienté objet et fonctionnel).",
+            "Algorithmique avancée, structures de données et architecture des systèmes.",
+            "Conception de protocoles réseau et gestion de bases de données distribuées.",
+            "Génie logiciel avec méthodologies agiles et outils collaboratifs.",
+            "Mathématiques appliquées : cryptographie, théorie des graphes et logique formelle."
         ],
     },
     {
-        title: "Aalto University",
-        job: "Semestre d'études à l'étranger",
-        date: "Janv. 2026",
-        logo: aalto,
-        contents: [
-            "Enhanced application security and developed new features, adhering to standards set by the Passive Defense Organization and National Cyberspace Center.",
-            "Designed and implemented intuitive map interfaces using MapsUI, enhancing user experience and enabling seamless interactive map integration.",
-            "Developed applications for industrial automation, leveraging C++ and the Fatek API for PLC communication.",
-            "Enhanced responsiveness and usability of applications using Windows Forms and WPF frameworks.",
-            "Executed XML to SVG conversions using X-DOM, ensuring dynamic and efficient data visualization.",
-        ],
-    },
+        "title": "Aalto University",
+        "job": "Semestre d'études à l'étranger",
+        "date": "Janv. 2026 - Juin. 2026",
+        "logo": aalto,
+        "contents": [
+            "Semestre à l'étranger prévu, détails des projets et réalisations à venir."
+        ]
+    }
+
 ];
