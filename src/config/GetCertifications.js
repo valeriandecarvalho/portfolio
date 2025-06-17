@@ -233,4 +233,17 @@ export const myCertifications = [
         ],
         href: "https://drive.google.com/file/d/139Hyn47uD8Voj0-UcOsjK7DacVM6E4gW/view?usp=sharing",
     },
+    {
+        id: 19,
+        title: "Learning AI Through Visualization",
+        company: "Columbia+",
+        period: "Jun 2025",
+        relevance: 2,
+        description: [
+            "-Explorer les concepts clés de l’IA, du ML et du DL",
+            "-Appliquer des modèles prédictifs aux problèmes concrets",
+            "-Analyser les données pour en extraire des informations exploitables",
+        ],
+        href: "https://drive.google.com/file/d/1hoqGnifJIENS1YSwkV9IQoWcNK3FOpnG/view?usp=sharing",
+    },
 ];
