@@ -55,25 +55,21 @@ const Contact = () => {
 
     return (
         <SectionWrapper
-            className="relative c-space section-spacing scroll-mt-12 min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden"
+            className="relative c-space section-spacing scroll-mt-12 min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"
             id="contacter"
         >
             {showAlert && <Alert type={alertType} text={alertMessage} />}
 
-            {/* Effets d'arrière-plan animés */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse animation-delay-500"></div>
+            {/* Effets d'arrière-plan animés - Corrigés pour mobile */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                {/* Grandes bulles d'arrière-plan - cachées sur mobile ou repositionnées */}
+                <div className="absolute top-0 right-0 w-40 h-40 sm:w-80 sm:h-80 sm:-top-40 sm:-right-40 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute bottom-0 left-0 w-40 h-40 sm:w-80 sm:h-80 sm:-bottom-40 sm:-left-40 bg-blue-500/20 rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-96 sm:h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse animation-delay-500"></div>
 
-                {/* Particules flottantes */}
-                <div className="absolute top-10 left-10 w-2 h-2 bg-purple-400 rounded-full animate-ping"></div>
-                <div className="absolute top-20 right-16 w-1 h-1 bg-pink-400 rounded-full animate-pulse"></div>
-                <div className="absolute bottom-16 left-20 w-1.5 h-1.5 bg-blue-400 rounded-full animate-ping animation-delay-1000"></div>
-                <div className="absolute bottom-10 right-10 w-2 h-2 bg-purple-300 rounded-full animate-pulse animation-delay-500"></div>
-                <div className="absolute top-1/3 left-1/4 w-1 h-1 bg-cyan-400 rounded-full animate-bounce"></div>
-                <div className="absolute top-2/3 right-1/4 w-1.5 h-1.5 bg-violet-400 rounded-full animate-bounce animation-delay-300"></div>
+
             </div>
+
             <div className="flex flex-col items-center justify-center max-w-lg p-8 mx-auto border border-white/20 rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl shadow-2xl relative z-10 hover:shadow-purple-500/10 transition-all duration-500 hover:border-white/30">
                 {/* Effet de lueur sur la carte */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500/5 via-pink-500/5 to-blue-500/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
