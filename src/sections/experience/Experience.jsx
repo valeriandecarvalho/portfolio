@@ -3,14 +3,9 @@ import { Timeline } from "./utilities/Timeline.jsx";
 import SectionWrapper from "../SectionWrapper.jsx";
 
 const Experience = () => {
-    const handleMouseMove = (e) => {
-        x.set(e.clientX + 20);
-        y.set(e.clientY + 20);
-    };
-
     return (
         <SectionWrapper id="experiences">
-            <div onMouseMove={handleMouseMove} className="relative">
+            <div className="relative">
                 <h2 className="text-heading">Expériences</h2>
                 <Timeline data={myExperiences} />
             </div>
