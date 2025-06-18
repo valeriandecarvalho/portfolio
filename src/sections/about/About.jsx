@@ -44,16 +44,20 @@ const About = () => {
               <Card  style={{ rotate: "0deg", top: "20%", left: "70%" }} image={git} containerRef={grid2container} borderColor="#f03c2e"/>
           </div>
         {/* Grid 3 */}
-        <div className="grid-black-color grid-3">
-            <div className="z-10">
-                <p className="headtext">Ouverture Internationale</p>
-                <p className="subtext w-[45%] md:w-[75%] lg:w-[60%]">Basé en France, ma passion pour la découverte m'ouvre aux opportunités européennes et internationales. Prêt à explorer de nouveaux environnements, en remote ou sur site.</p>
-            </div>
-            < figure className="absolute left-[40%] md:left-[60%] lg:left-[50%] top-[10%]">
-                < Globe />
-            </figure>
-        </div>
-        {/* Grid 4 */}
+          <div className="grid-black-color grid-3">
+              <div className="z-10">
+                  <p className="headtext">Ouverture Internationale</p>
+                  <p className="subtext text-sm sm:text-base mt-2 sm:mt-3 w-full sm:w-[65%] md:w-[75%] lg:w-[60%]">
+                      Basé en France, ma passion pour la découverte m'ouvre aux opportunités européennes et
+                      internationales. Prêt à explorer de nouveaux environnements, en remote ou sur site.
+                  </p>
+              </div>
+              <figure
+                  className="absolute right-[5%] sm:left-[45%] md:left-[60%] lg:left-[50%] top-[45%] sm:top-[10%] transform scale-75 sm:scale-100">
+                  <Globe/>
+              </figure>
+          </div>
+          {/* Grid 4 */}
           <div className="grid-special-color grid-4 flex items-center justify-center">
               <div className="flex flex-col items-center justify-center gap-4 size-">
                   <p className="text-center mt-2 mb-2 text-lg">
