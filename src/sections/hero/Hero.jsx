@@ -1,5 +1,5 @@
 import React, {Suspense} from 'react'
-import {HeroBackground, Robot} from "./utilities"
+import {HeroBackground, Robot, HeroText, Loader} from "./utilities"
 import {Canvas} from "@react-three/fiber";
 import { useMediaQuery } from "react-responsive";
 
@@ -12,7 +12,7 @@ const Hero = () => {
     let scale = 1;
 
     if (isSm) {
-        scale= 0.75;
+        scale= 0.9;
     } else if (isMd) {
         scale= 1;
     }
@@ -21,8 +21,9 @@ const Hero = () => {
     <section
         id="accueil">
         <HeroBackground/>
-        <Canvas>
-            < Suspense fallback={null}>
+        <HeroText/>
+        <Canvas className="absolute inset-0 z-20">
+            <Suspense fallback={<Loader/>}>
                 <Robot position={position}
                        rotation={rotation}
                        scale={scale}

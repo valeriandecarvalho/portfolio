@@ -20,16 +20,16 @@ const HeroBackground = () => {
                 style={{ backgroundImage: "url(/background/sky.jpg)" }}
             />
 
-            {/* Mountain 3 - Le plus lent */}
+            {/* Mountain 3 */}
             <motion.div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{
                     backgroundImage: "url(/background/mountain-3.png)",
-                    y: slowMove
+                    y: fastMove
                 }}
             />
 
-            {/* Mountain 2 - Vitesse moyenne */}
+            {/* Mountain 2 */}
             <motion.div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{
@@ -38,12 +38,12 @@ const HeroBackground = () => {
                 }}
             />
 
-            {/* Mountain 1 - Le plus rapide */}
+            {/* Mountain 1 */}
             <motion.div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{
                     backgroundImage: "url(/background/mountain-1.png)",
-                    y: fastMove
+                    y: slowMove
                 }}
             />
         </div>
