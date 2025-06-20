@@ -14,10 +14,15 @@
   --color-orange: #cc6033;
   --color-sand: #d6995c;
   --color-coral: #ea4884;
+  --color-navbar: #a1a1a1;
   --animate-orbit: orbit 50s linear infinite;
   --breakpoint-xs: 320px;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
+}
+
+canvas {
+  height: 100vh !important;
 }

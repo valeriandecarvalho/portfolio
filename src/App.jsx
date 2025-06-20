@@ -1,16 +1,14 @@
-import {Navbar, Hero, Projects, About, Education, Experience, Contact, Footer} from "./sections/index.js";
+import {Navbar, Hero} from "./sections/index.js";
 
 const App = ()  => {
     return(
         <div className="container mx-auto max-w-7xl">
             < Navbar />
             < Hero />
-            < About />
-            < Projects />
-            < Education />
-            < Experience />
-            < Contact />
-            < Footer />
+
+            <div className="h-1000"></div>
+
+
         </div>
     );
 };
