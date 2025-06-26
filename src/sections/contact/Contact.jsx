@@ -60,15 +60,6 @@ const Contact = () => {
         >
             {showAlert && <Alert type={alertType} text={alertMessage} />}
 
-            {/* Effets d'arrière-plan animés - Corrigés pour mobile */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                {/* Grandes bulles d'arrière-plan - cachées sur mobile ou repositionnées */}
-                <div className="absolute top-0 right-0 w-40 h-40 sm:w-80 sm:h-80 sm:-top-40 sm:-right-40 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-0 left-0 w-40 h-40 sm:w-80 sm:h-80 sm:-bottom-40 sm:-left-40 bg-blue-500/20 rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-96 sm:h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse animation-delay-500"></div>
-
-
-            </div>
 
             <div className="flex flex-col items-center justify-center max-w-lg p-8 mx-auto border border-white/20 rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl shadow-2xl relative z-10 hover:shadow-purple-500/10 transition-all duration-500 hover:border-white/30">
                 {/* Effet de lueur sur la carte */}

@@ -4,7 +4,25 @@ import {Canvas} from "@react-three/fiber";
 import {useMediaQuery} from "react-responsive";
 
 const Hero = () => {
-    const isMobile = useMediaQuery({ maxWidth: 853 });
+    const isSm = useMediaQuery({ maxWidth: 767 });
+    const isMd = useMediaQuery({ minWidth: 768, maxWidth: 991 });
+    const isLg = useMediaQuery({ minWidth: 992, maxWidth: 1199 });
+    const isXl = useMediaQuery({ minWidth: 1200 });
+
+    let position = [0, -0.65, 4];
+    let rotation = [-0.25, Math.PI, 0];
+    let scale = 1;
+
+    if (isSm) {
+        scale= 1;
+    } else if (isMd) {
+        scale= 1.2;
+    } else if (isLg) {
+        scale= 1.3;
+    } else if (isXl) {
+        scale = 1.4;
+    }
+
   return (
       <section
           className="flex items-start justify-center min-h-screen overflow-hidden md:items-start md:justify-start c-space"
@@ -15,11 +33,12 @@ const Hero = () => {
         <figure
             className="absolute inset-0 w-full h-screen"
         >
-            <Canvas camera={{position: [0, -0.1, -0.5]}}>
+            <Canvas className="absolute inset-0 z-20">
                 <Suspense fallback={<Loader/>}>
-                    <Robot
-                            scale ={isMobile ? 0.5 : 0.75}
-                            position={isMobile ?[0,-0.28,0] : [-0.05,-0.3,0]}/>
+                    <Robot position={position}
+                           rotation={rotation}
+                           scale={scale}
+                    />
                 </Suspense>
             </Canvas>
         </figure>

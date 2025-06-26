@@ -2,11 +2,12 @@ import React from 'react'
 import {useRef} from "react";
 import { git, raspberry, java } from "../../assets";
 import {Card, Globe, CopyEmailButton, SkillsCircle} from './utilities'
+import SectionWrapper from "../SectionWrapper.jsx";
 
 const About = () => {
     const grid2container = useRef();
   return (
-    <section className="c-space section-spacing">
+    <SectionWrapper>
       <h2 className="text-heading">
         À propos de moi
       </h2>
@@ -15,7 +16,8 @@ const About = () => {
         <div className="flex items-end grid-default-color grid-1">
             <img
                 src="/grid_1.png"
-                className="absolute scale-[1] right-[-1rem] top-[7.5rem]
+                className="absolute scale-[1] right-[-1rem] top-[11.5rem]
+                vs:top-[8.5rem]
                 md:scale-[2.25] md:left-1 md:top-[75%]
                 lg:scale-[1.75] lg:top-[70%]"
             />
@@ -68,18 +70,18 @@ const About = () => {
           </div>
         {/* Grid 5 */}
         <div className="grid-default-color grid-5">
-            <div className="z-10 w-[60%]">
+            <div className="z-10 ">
                 <p className="headtext">Stack Technique</p>
-                <p className="subtext">
+                <p className="subtext w-[60%]">
                     Formation académique et auto-apprentissage m'ont permis d'acquérir une base technique solide. Du développement logiciel au hardware embarqué, je continue d'élargir mes compétences.
                 </p>
             </div>
-            <div className="absolute inset-y-0 md:inset-y-5 w-full h-full start-[50%] md:scale-90 sm:scale-120 ">
+            <div className="absolute inset-y-0 md:inset-y-5 w-full h-full scale-50 start-[50%] md:scale-90 sm:scale-120 ">
                 <SkillsCircle />
             </div>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   )
 }
 

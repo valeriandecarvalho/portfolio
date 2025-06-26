@@ -1,156 +1,39 @@
-import { FlipWords } from "./";
-import { motion } from "motion/react";
 import { wavinghand } from "../../../assets/index.js";
-import { useMediaQuery } from "react-responsive";
+import { FlipWords } from "./";
+import { motion } from "framer-motion"; // Correction de l'import
 
 const HeroText = () => {
     const words = ["Stages","Contacts","Postes","Missions","Projets"];
     const variants = {
-        hidden: {opacity: 0, x:-50},
-        visible: {opacity: 1, x:0}
+        hidden: {opacity: 0, scale: 0.25},
+        visible: {opacity: 1, scale: 1}
     };
 
-    const isMobileLandscape = useMediaQuery({
-        maxWidth: 853,
-        orientation: 'landscape',
-        maxHeight: 500
-    });
-
     return (
-        <div className={`z-10 text-center md:text-left rounded-3xl bg-clip-text ${
-            isMobileLandscape ? 'mt-2' : 'mt-20 md:mt-40'
-        }`}>
-            {/* Desktop */}
-            <div className="flex-col hidden md:flex c-space space-y-2">
-                <motion.h1
-                    className="text-3xl font-medium"
+        <motion.div className="absolute inset-0 text-center z-30 flex-col items-center text-white text-xl lg:text-2xl xl:text-4xl font-bold pointer-events-none pt-[20vh]"
                     variants={variants}
                     initial="hidden"
                     animate="visible"
-                    transition={{delay: 1}}
-                >
-                    <img src={wavinghand} alt="main qui salue" className="inline w-8 h-8" /> , je suis Valérian De Carvalho
-                </motion.h1>
-                <div className="flex flex-col items-start">
-                    <motion.p className="text-5xl font-medium text-neutral-300"
-                              variants={variants}
-                              initial="hidden"
-                              animate="visible"
-                              transition={{delay: 1.2}}
-                    >
-                        Étudiant En Informatique<br/>
-                    </motion.p>
-                    <motion.p className="text-5xl font-medium text-neutral-300"
-                              variants={variants}
-                              initial="hidden"
-                              animate="visible"
-                              transition={{delay: 1.5}}
-                    >
-                        Je Recherche Des<br/>
-                    </motion.p>
-                    <motion.div
-                        variants={variants}
-                        initial="hidden"
-                        animate="visible"
-                        transition={{delay: 1.8}}>
-                        <FlipWords words={words} className="text-8xl font-medium -mt-2" />
-                    </motion.div>
-                </div>
-            </div>
+                    transition={{delay: 1}}>
+            {/* Version desktop */}
+            <h1 className="hidden md:inline">
+                <img src={wavinghand} alt="main qui salue" className="inline w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8" />, je suis Valérian De Carvalho<br/>
+            </h1>
 
-            {/* Mobile */}
-            <div className={`flex-col space-y-6 md:hidden ${isMobileLandscape ? 'hidden' : 'flex'}`}>
-                <motion.h1
-                    className="text-xl font-medium"
-                    variants={variants}
-                    initial="hidden"
-                    animate="visible"
-                    transition={{delay: 1}}
-                >
-                    <img src={wavinghand} alt="main qui salue" className="inline w-6 h-6" /> , je suis Valérian De Carvalho
-                </motion.h1>
-                <motion.p className="font-medium"
-                          variants={variants}
-                          initial="hidden"
-                          animate="visible"
-                          transition={{delay: 1.2}}>
-                    <span className="text-2xl text-neutral-300">
-                        Je suis&nbsp;
-                    </span>
-                    <span className="text-4xl">
-                        Étudiant<br/>
-                    </span>
-                    <span className="text-2xl text-neutral-300">
-                        en&nbsp;
-                    </span>
-                    <span className="text-4xl">
-                        informatique
-                    </span>
-                </motion.p>
-                <motion.p className="text-3xl text-neutral-300 font-medium"
-                          variants={variants}
-                          initial="hidden"
-                          animate="visible"
-                          transition={{delay: 1.5}}>
-                    Je recherche des
-                </motion.p>
-                <motion.div className="-mt-6"
-                            variants={variants}
-                            initial="hidden"
-                            animate="visible"
-                            transition={{delay: 1.8}}>
-                    <FlipWords words={words} className="text-6xl font-medium"/>
-                </motion.div>
-            </div>
+            {/* Version mobile - Main qui salue seulement */}
+            <span className="inline md:hidden">
+                <img src={wavinghand} alt="main qui salue" className="inline w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8" /><br/>
+            </span>
 
-            {/* Mobile Landscape */}
-            <div className={`${isMobileLandscape ? 'flex' : 'hidden'} flex-col space-y-0 md:hidden mt-12`}>
-                <motion.h1
-                    className="text-sm font-medium"
-                    variants={variants}
-                    initial="hidden"
-                    animate="visible"
-                    transition={{delay: 1}}
-                >
-                    <img src={wavinghand} alt="main qui salue" className="inline w-4 h-4" /> , je suis Valérian De Carvalho
-                </motion.h1>
-                <motion.p className="font-medium "
-                          variants={variants}
-                          initial="hidden"
-                          animate="visible"
-                          transition={{delay: 1.2}}>
-                    <span className="text-sm text-neutral-300">
-                        Je suis&nbsp;
-                    </span>
-                    <span className="text-lg">
-                        Étudiant<br/>
-                    </span>
-                    <div className="-mt-2">
-                        <span className="text-sm text-neutral-300">
-                            en&nbsp;
-                        </span>
-                        <span className="text-lg">
-                            informatique
-                        </span>
-                    </div>
-                </motion.p>
-                <motion.p className="text-base text-neutral-300 font-medium"
-                          variants={variants}
-                          initial="hidden"
-                          animate="visible"
-                          transition={{delay: 1.5}}>
-                    Je recherche des
-                </motion.p>
-                <motion.div className="-mt-2"
-                            variants={variants}
-                            initial="hidden"
-                            animate="visible"
-                            transition={{delay: 1.8}}>
-                    <FlipWords words={words} className="text-3xl font-medium"/>
-                </motion.div>
-            </div>
-        </div>
-    )
-}
+            {/* Texte commun */}
+            <span className="text-quick-silver">
+                Étudiant En Informatique<br/>
+                Je Recherche Des<br/>
+            </span>
+            <FlipWords words={words} className="text-4xl lg:text-5xl xl:text-8xl" />
+
+        </motion.div>
+    );
+};
 
 export default HeroText;
