@@ -11,17 +11,26 @@ const Education = () => {
     const parseUrlParams = () => {
         const hash = window.location.hash;
 
-        // Vérifier si on a un hash avec des paramètres
+        // Cas 1: Hash simple comme #formations
+        if (hash === '#formations') {
+            return { tab: 'academiques', search: null, company: null, sort: null };
+        }
+
+        // Cas 2: Hash avec des paramètres comme #formations?tab=complementaires
         if (hash.includes('?')) {
-            const [, queryString] = hash.split('?');
-            const urlParams = new URLSearchParams(queryString);
+            const [hashPart, queryString] = hash.split('?');
 
-            const tab = urlParams.get('tab');
-            const search = urlParams.get('search');
-            const company = urlParams.get('company');
-            const sort = urlParams.get('sort');
+            // Vérifier que le hash correspond bien à notre section
+            if (hashPart === '#formations') {
+                const urlParams = new URLSearchParams(queryString);
 
-            return { tab, search, company, sort };
+                const tab = urlParams.get('tab');
+                const search = urlParams.get('search');
+                const company = urlParams.get('company');
+                const sort = urlParams.get('sort');
+
+                return { tab, search, company, sort };
+            }
         }
 
         return { tab: null, search: null, company: null, sort: null };
@@ -31,13 +40,26 @@ const Education = () => {
     useEffect(() => {
         const { tab, search, company, sort } = parseUrlParams();
 
-        if (tab === 'complementaires') {
-            setActiveTab('complementaires');
-            setInitialFilters({
-                search: search || '',
-                company: company || '',
-                sort: sort || 'relevance'
-            });
+        // Si on a un hash #formations (avec ou sans paramètres)
+        if (tab !== null) {
+            if (tab === 'complementaires') {
+                setActiveTab('complementaires');
+                setInitialFilters({
+                    search: search || '',
+                    company: company || '',
+                    sort: sort || 'relevance'
+                });
+            } else {
+                // Par défaut ou pour 'academiques'
+                setActiveTab('academiques');
+                setInitialFilters({});
+            }
+
+            // Scroll vers la section si nécessaire
+            const element = document.getElementById('formations');
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
         }
     }, []);
 
@@ -46,13 +68,24 @@ const Education = () => {
         const handleHashChange = () => {
             const { tab, search, company, sort } = parseUrlParams();
 
-            if (tab === 'complementaires') {
-                setActiveTab('complementaires');
-                setInitialFilters({
-                    search: search || '',
-                    company: company || '',
-                    sort: sort || 'relevance'
-                });
+            if (tab !== null) {
+                if (tab === 'complementaires') {
+                    setActiveTab('complementaires');
+                    setInitialFilters({
+                        search: search || '',
+                        company: company || '',
+                        sort: sort || 'relevance'
+                    });
+                } else {
+                    setActiveTab('academiques');
+                    setInitialFilters({});
+                }
+
+                // Scroll vers la section
+                const element = document.getElementById('formations');
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
             }
         };
 
@@ -62,6 +95,16 @@ const Education = () => {
 
     const handleTabChange = (tab) => {
         setActiveTab(tab);
+
+        // Mettre à jour l'URL si nécessaire
+        const currentHash = window.location.hash;
+        if (currentHash.startsWith('#formations')) {
+            if (tab === 'complementaires') {
+                window.history.replaceState(null, null, '#formations?tab=complementaires');
+            } else {
+                window.history.replaceState(null, null, '#formations');
+            }
+        }
     };
 
     return (

@@ -47,7 +47,7 @@ const Navbar = () => {
             <div className="mx-auto c-space max-w-7xl">
                 <div className="flex items-center justify-between py-2 md:py-0">
                     <a
-                        href="/public"
+                        href="#accueil"
                         className="flex items-center gap-2 text-xl font-bold transition-colors text-neutral-400 hover:text-white"
                     >
                         <img src={logo} alt="logo" className="w-6 h-6" />
